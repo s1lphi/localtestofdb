@@ -1,8 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: http://fordevtest.local');
-header('Access-Control-Allow-Credentials: true');
-header('Content-Type: application/json');
-
 require 'config.php';
 
 $data = json_decode(file_get_contents("php://input"));
@@ -20,3 +16,4 @@ if ($user && password_verify($password, $user['password'])) {
 } else {
     echo json_encode(['message' => 'Невірний логін або пароль']);
 }
+
